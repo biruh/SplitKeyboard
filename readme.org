@@ -1,0 +1,8 @@
+#+title: QMK Configuration and Layout for SplitShift
+#+author: Biruh Tesfahun
+
+SplitShift is a custom split keyboard based on the Corne desgin with 3x5_3 layout.
+
+* Instruction
+
+This is an Org file that defines configurations and tangles them to specific locations in the QMK tree. To build the firmware please consult the qmk firmware.
