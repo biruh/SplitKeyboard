@@ -1,28 +1,29 @@
 {
     "keyboard_name": "splitshift",
-    "manufacturer": "custom DIY",
+    "manufacturer": "DIY",
     "url": "https://github.com/biruh/splitshift.git",
     "maintainer": "biruh",
+    "split": {
+        "enabled": true
+    },
+
     "usb": {
         "vid": "0x4653",
         "pid": "0x0001",
         "device_version": "0.0.1"
     },
+
+    "processor": "atmega32u4",
     "matrix_pins": {
         "cols": ["F1", "F5", "B1", "F6", "B2"],
         "rows": ["D5", "C6", "D4", "D0"]
     },
+    "diode_direction": "COL2ROW",
+
     "features": {
         "bootmagic": true,
         "extrakey": true,
-        "mousekey": true,
-        "nkro": false,
-        "oled": false
+        "mousekey": true
     },
-    "diode_direction": "COL2ROW",
-    "split": {
-        "enabled": true
-    },
-    "processor": "atmega32u4",
     "community_layouts": ["split_3x5_3"]
 }

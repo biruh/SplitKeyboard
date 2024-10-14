@@ -6,3 +6,59 @@ SplitShift is a custom split keyboard based on the Corne desgin with 3x5_3 layou
 * Instruction
 
 This is an Org file that defines configurations and tangles them to specific locations in the QMK tree. To build the firmware please consult the qmk firmware.
+
+* Configurations
+
+** definitions
+[[https://github.com/qmk/qmk_firmware/blob/master/docs/reference_info_json.md][QMK info.json documentation]]
+#+BEGIN_SRC json :tangle info.json
+{
+    "keyboard_name": "splitshift",
+    "manufacturer": "DIY",
+    "url": "https://github.com/biruh/splitshift.git",
+    "maintainer": "biruh",
+    "split": {
+        "enabled": true
+    },
+#+END_SRC
+
+the devices vid and pid are taken from Corne
+#+BEGIN_SRC json :tangle info.json
+    "usb": {
+        "vid": "0x4653",
+        "pid": "0x0001",
+        "device_version": "0.0.1"
+    },
+#+END_SRC
+
+I have used the [[https://deskthority.net/wiki/Elite-C][Elite-C]] microcontroller which is Pro Micro compatible and uses ATmega32U4
+#+BEGIN_SRC json :tangle info.json
+    "processor": "atmega32u4",
+    "matrix_pins": {
+        "cols": ["F1", "F5", "B1", "F6", "B2"],
+        "rows": ["D5", "C6", "D4", "D0"]
+    },
+    "diode_direction": "COL2ROW",
+#+END_SRC
+
+We will enable some features. The bootmagic feature allows us to enter the bootloader by holding a specific key while we plug the keyboard. The extrakey allows us to control media.
+#+BEGIN_SRC json :tangle info.json
+    "features": {
+        "bootmagic": true,
+        "extrakey": true,
+        "mousekey": true
+    },
+    "community_layouts": ["split_3x5_3"]
+}
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp  :var tangle=(org-babel-tangle)
+(json-read-file "info.json")
+#+END_SRC
+
+#+RESULTS:
+: ((keyboard_name . splitshift) (manufacturer . DIY) (url . https://github.com/biruh/splitshift.git) (maintainer . biruh) (split (enabled . t)) (usb (vid . 0x4653) (pid . 0x0001) (device_version . 0.0.1)) (processor . atmega32u4) (matrix_pins (cols . [F1 F5 B1 F6 B2]) (rows . [D5 C6 D4 D0])) (diode_direction . COL2ROW) (features (bootmagic . t) (extrakey . t) (mousekey . t)) (community_layouts . [split_3x5_3]))
+
+* Layout
+
+todo
