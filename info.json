@@ -20,6 +20,9 @@
     },
     "diode_direction": "COL2ROW",
 
+    "build": {
+        "lto": true
+    },
     "features": {
         "bootmagic": true,
         "extrakey": true,
