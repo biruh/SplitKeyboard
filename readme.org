@@ -58,7 +58,7 @@ We will enable some features. The bootmagic feature allows us to enter the bootl
 }
 #+END_SRC
 
-*** some more definitions in keyboard.json
+ some more definitions in keyboard.json
 
 #+BEGIN_SRC json :tangle keyboard.json
 {
@@ -316,5 +316,7 @@ Checking file size of splitshift_default.hex                                    
 
 **** flashing
 #+BEGIN_SRC shell :results output
-~/.local/bin/qmk splitshift_default.hex
+~/.local/bin/qmk flash splitshift_default.hex
 #+END_SRC
+
+#+RESULTS:
